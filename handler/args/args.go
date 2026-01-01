@@ -33,4 +33,12 @@ func (a *args) GetValue(key string) string {
 	return ""
 }
 
+// this returns a positional argument by its index
+func (a *args) GetIndex(index int) string {
+	if len(os.Args) <= index {
+		return ""
+	}
+	return os.Args[index]
+}
+
 var Args = newArgs()
